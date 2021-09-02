@@ -12,13 +12,21 @@ public class Game {
 	private Long game_id;
 	private String game_name;
 	private String game_genre;
-
+	
+	//Dont Repeat Yourself => DRY
+	//game.game_id = 1
+	//game.game_name = "Tekken"
+	
+	//private static final BigDecimal PI = 3.14;
+	//private static final Message_porperty = "HELLO PEOPLE".
+			
+			
 	public Long getGame_id() {
-		return game_id;
+		return get_id;
 	}
 
 	public void setGame_id(Long game_id) {
-		this.game_id = game_id;
+		this.game_id = id;
 	}
 
 	public String getGame_name() {
@@ -26,7 +34,7 @@ public class Game {
 	}
 
 	public void setGame_name(String game_name) {
-		this.game_name = game_name;
+		this.game_name = name;
 	}
 
 	public String getGame_genre() {
@@ -34,7 +42,7 @@ public class Game {
 	}
 
 	public void setGame_genre(String game_genre) {
-		this.game_genre = game_genre;
+		this.game_genre = genre;
 	}
 
 }
