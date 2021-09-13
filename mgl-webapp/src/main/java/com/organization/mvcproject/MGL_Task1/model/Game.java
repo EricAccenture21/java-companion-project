@@ -13,7 +13,7 @@ public class Game {
 	private String game_name;
 	private String game_genre;
 	
-	//Dont Repeat Yourself => DRY
+	//Don't Repeat Yourself => DRY
 	//game.game_id = 1
 	//game.game_name = "Tekken"
 	
@@ -22,11 +22,11 @@ public class Game {
 			
 			
 	public Long getGame_id() {
-		return get_id;
+		return game_id;
 	}
 
 	public void setGame_id(Long game_id) {
-		this.game_id = id;
+		this.game_id = game_id;
 	}
 
 	public String getGame_name() {
@@ -34,7 +34,7 @@ public class Game {
 	}
 
 	public void setGame_name(String game_name) {
-		this.game_name = name;
+		this.game_name = game_name;
 	}
 
 	public String getGame_genre() {
@@ -42,7 +42,7 @@ public class Game {
 	}
 
 	public void setGame_genre(String game_genre) {
-		this.game_genre = genre;
+		this.game_genre = game_genre;
 	}
 
 }

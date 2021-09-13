@@ -19,7 +19,9 @@ public class Game_Service_Impl implements Game_Service {
 	 *  Move this list, and methods operating on this list to an appropriately named package and class.
 	 */
 	
+	@SuppressWarnings("deprecation")
 	private static Long gameId = new Long(0);
+	@SuppressWarnings("deprecation")
 	private static Long companyId = new Long(0);
 	private static List<Game> games = new ArrayList<Game>();
 
@@ -30,19 +32,19 @@ public class Game_Service_Impl implements Game_Service {
 	private static List<Game> populateGames() {
 
 		Game game1 = new Game();
-		game1.setId(++gameId);
-		game1.setGenre("Sport");
-		game1.setName("Rocket League");
+		game1.setGame_id(++gameId);
+		game1.setGame_genre("Sport");
+		game1.setGame_name("Rocket League");
 
 		Game game2 = new Game();
-		game2.setId(++gameId);
-		game2.setGenre("Shooter");
-		game2.setName("Halo 3");
+		game2.setGame_id(++gameId);
+		game2.setGame_genre("Shooter");
+		game2.setGame_name("Halo 3");
 
 		Game game3 = new Game();
-		game3.setId(++gameId);
-		game3.setGenre("MMORPG");
-		game3.setName("Runescape");
+		game3.setGame_id(++gameId);
+		game3.setGame_genre("MMORPG");
+		game3.setGame_name("Runescape");
 
 		games.add(game1);
 		games.add(game2);
