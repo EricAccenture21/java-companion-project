@@ -3,21 +3,23 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.organization.mvcproject.model.Game;
+import com.organization.mvcproject.repo.MockGameDAC;
 
 @Service
 public class GameServiceImpl implements GameService {
 
 		@Autowired
-		private MockGmaeDAC mockGameDAC; 
+		private MockGameDAC mockGameDAC; 
 		
 
 
 	@Override
-	public List<Game> retrieveAllGames() {
-		return games;
+	public List<Game> retrieveAllGames(){
+		return mockGameDAC.getGames();
 	}
 
 	@Override
@@ -25,8 +27,12 @@ public class GameServiceImpl implements GameService {
 		return mockGameDAC.saveGame(game);
 	}
 	
-	public boolean deleteGame(Long gameID) {
-		return 
+	public boolean deleteGame(Long id) {
+		return mockGameDAC.deleteGame(id);
+	}
+	
+	public Game findgameById(Long id) {
+		return mockGameDAC.findGameById(id);
 	}
 
 }

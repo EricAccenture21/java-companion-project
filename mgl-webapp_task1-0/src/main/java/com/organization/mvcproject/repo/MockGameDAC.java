@@ -37,23 +37,50 @@ public class MockGameDAC {
 
 		return games;
 	}
-public List<Game> GetAllGames() {
-	return games;
-}
-public Game saveGame(Game Game) {
-	return null;
-}
-
-public Game findGameById(Long id) {
-	for (Game game: games) {
-		if(id.equals(game.getId())) {
-			return game;
-		}
+	
+	public List<Game> getGames() {
+		return games;
 	}
-	return null;
-}
-public Boolean deleteGame (Long gameId) {
-	(int i = 0; I < games.size(); i++)
-}
+
+	
+	public Game saveGame(Game game) {
+		if(game.getId() != null);
+		Game foundGame = findGameById(game.getId());
+		if (foundGame != null) {
+			for(int i = 0; i < games.size(); i++) {
+				if(game.getId().equals(games.get(i))) {
+					return games.set(i,  foundGame);
+				}
+			}
+		}
+		game.setId(++gameId);
+		games.add( game);
+		return game;
+	}
+	public Game findGameById(Long id) {
+		for(Game g: games) {
+			if(id.equals(g.getId())) {
+				return g;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * 
+	 * 
+	 * @param Id
+	 * @return
+	 */
+	public boolean deleteGame(Long Id) {
+		for(int i = 0; i < games.size(); i++) {
+			if( gameId.equals(games.get(i).getId())) {
+				return games.remove(games.get(i));
+			}
+		}
+		return false;
+	}
+
+
 
 }
