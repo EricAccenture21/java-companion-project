@@ -1,12 +1,16 @@
 'use strict';
 
-angular.module('GameApp').service('GameService', ['$http', function($http) {
+angular.module('GameApp').service('GameService', ['$http', '$log', function($http) {
 
 		var REST_SERVICE_URI = 'game/';
 
 		var factory = {
 			fetchAllGames : fetchAllGames,
-			createGame : createGame
+			createGame : createGame,
+			updateGame : updateGame,
+			deleteGame : deleteGame,
+			findGame : findGame
+			
 		};
 
 		return factory;
@@ -23,6 +27,28 @@ angular.module('GameApp').service('GameService', ['$http', function($http) {
 					return response.data;
 				}
 			);
+		}
+		
+		function updateGame(game) {
+			return $http.put(REST_SERVICE_URI, game).then( function (repsonse) {
+				return response.data;
+			})
+		}
+
+		function deleteGame(id){
+			return $http.delete(REST_SERVICE_URI + id).then( function (response){
+				if (!response.data){
+					$log.debug("No game delete with id" + id);
+				}
+				return reponse.data;
+		
+			});
+		}
+		
+			function findGame(game) {
+			return $http.put(REST_SERVICE_URI, game).then( function (repsonse) {
+				return response.data;
+			})
 		}
 
 }]);

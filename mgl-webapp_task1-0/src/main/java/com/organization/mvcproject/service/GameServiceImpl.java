@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.organization.mvcproject.model.Game;
-import com.organization.mvcproject.repo.MockGameDAC;
+import com.organization.mvcproject.repo.MockGameDAO;
 
 @Service
 public class GameServiceImpl implements GameService {
 
 		@Autowired
-		private MockGameDAC mockGameDAC; 
+		private MockGameDAO mockGameDAC; 
 		
 
 

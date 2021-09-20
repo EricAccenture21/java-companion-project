@@ -2,25 +2,38 @@
 
 angular.module('GameApp').controller('GameController',
 		[ 'GameService', function(GameService) {
-			var self = this;
-			self.game = {
+			var vm = this;
+			vm.game = {
 				id : '',
 				name : '',
 				genre : ''
 			};
-			self.games = [];
+			vm.games = [];
 
-			self.fetchAllGames = function(){
+			vm.fetchAllGames = function(){
 				GameService.fetchAllGames().then(function(data) {
-					self.games = data;
+					vm.games = data;
+				}).finally( function(){
+					vm.game = {};
 				});
 			}
 
-			self.addGame = function(){
-				return GameService.createGame(self.game).then( function() {
+			vm.addGame = function(){
+				return GameService.createGame(vm.game).then( function() {
 				self.fetchAllGames();
 				});
 			}
+			
+			vm.loadUpadate(gameToUpdate) {
+				vm.game = angular.copy(gameToUpdate);
+			}
+			
+			vm.update.game = function(){
+			 return GameService.updateGame(vm.game).then( function() {
+				self.fetchAllGames();
+				});
+				
+			}
 
-			self.fetchAllGames();
-		} ]);
+			vm.fetchAllGames();
+		 }]);
