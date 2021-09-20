@@ -32,10 +32,18 @@ angular.module('GameApp').controller('GameController',
 			}
 			
 			vm.updateGame = function(){
-			 return GameService.updateGame(vm.game).then( function(){
+			 return GameService.updateGame(vm.game).then(function(){
 				vm.fetchAllGames();
 				});
 				
+			}
+			
+			vm.deleteGame = function(currentGame){
+				return GameService.deleteGame(currentGame).then(function(){
+					vm.fetchAllGames();
+				});
+				
+				console.log(vm.deleteGame)
 			}
 
 			vm.fetchAllGames();
