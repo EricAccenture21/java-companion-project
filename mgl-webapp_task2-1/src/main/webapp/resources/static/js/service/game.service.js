@@ -2,7 +2,7 @@
 
 angular.module('GameApp').service('GameService', ['$http', '$log', function($http) {
 
-		var REST_SERVICE_URI = 'game/';
+		var REST_SERVICE_URI = '';
 
 		var factory = {
 			fetchAllGames : fetchAllGames,
