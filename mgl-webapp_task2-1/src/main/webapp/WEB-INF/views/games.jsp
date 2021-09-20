@@ -39,7 +39,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading text-light"><span class="lead">Game Registration Form </span></div>
                 <div class="formcontainer">
-                    <form ng-if="!ctrl.game.id" ng-submit="ctrl.addGame()" name="gameForm" class="form-horizontal">
+                    <form ng-submit="ctrl.addGame()" name="gameForm" class="form-horizontal">
                         <input  type="hidden" ng-model="ctrl.game.id" />
                         <div class="row">
                             <div class="form-group col-md-12">
